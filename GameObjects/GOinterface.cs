@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HT_Engine.GameObjects
 {
-    public interface GameObject
+    public interface IGameObject
     {
         void RenderObject();
     }

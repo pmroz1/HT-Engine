@@ -11,13 +11,13 @@ namespace HT_Engine
     public struct Game
     {
         public GameWindow game;
-        public List<GameObject> objects;
+        public List<IGameObject> objects;
 
         public Game(string gameTitle)
         {
             game = new GameWindow();
             game.Title = gameTitle;
-            objects = new List<GameObject>();
+            objects = new List<IGameObject>();
             game.Load += Load;
             game.Resize += Resize;
             game.RenderFrame += Render;
@@ -40,16 +40,23 @@ namespace HT_Engine
             GL.LoadIdentity();
             GL.Ortho(-1.0, 1.0, -1.0, 1.0, 0.0, 4.0);
 
-            foreach (GameObject obj in objects)
+            foreach (IGameObject obj in objects)
             {
                 obj.RenderObject();
             }
+            //without swapping we will have 2-3fps
+            game.SwapBuffers();
         }
 
-        public void Run()
+        public void Run(GameWindow gameWindow)
         {
             //makes game run at 60 fps
-            game.Run(60.0);
+            gameWindow.Run(60.0);
+        }
+
+        public void AddObject(IGameObject obj)
+        {
+            objects.Add(obj);
         }
     }
 }
