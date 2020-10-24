@@ -3,6 +3,7 @@ using OpenTK;
 using OpenTK.Graphics.OpenGL;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 
@@ -11,13 +12,25 @@ namespace HT_Engine
     public struct Game
     {
         public GameWindow game;
+        public Color BackgroundColor;
         public List<IGameObject> objects;
 
-        public Game(string gameTitle)
+        //public Game(string gameTitle)
+        //{
+        //    game = new GameWindow();
+        //    game.Title = gameTitle;
+        //    objects = new List<IGameObject>();
+        //    game.Load += Load;
+        //    game.Resize += Resize;
+        //    game.RenderFrame += Render;
+        //}
+
+        public Game(string gameTitle, Color BkgColor)
         {
             game = new GameWindow();
             game.Title = gameTitle;
             objects = new List<IGameObject>();
+            BackgroundColor = BkgColor;
             game.Load += Load;
             game.Resize += Resize;
             game.RenderFrame += Render;
@@ -36,6 +49,7 @@ namespace HT_Engine
         public void Render(object sender, EventArgs e)
         {
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
+            GL.ClearColor(BackgroundColor);
             GL.MatrixMode(MatrixMode.Projection);
             GL.LoadIdentity();
             GL.Ortho(-1.0, 1.0, -1.0, 1.0, 0.0, 4.0);
