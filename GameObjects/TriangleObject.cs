@@ -14,13 +14,17 @@ namespace HT_Engine.GameObjects
         {
             color = clr;
         }
+        //public void Dispose()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         void IGameObject.RenderObject()
         {
             GL.Begin(PrimitiveType.Triangles);
-            GL.Vertex2(-1.0f,-1.0f);
-            GL.Vertex2(0.0f,1.0f);
-            GL.Vertex2(1.0f,-1.0f);
+            GL.Vertex2(-1.0f, -1.0f);
+            GL.Vertex2(0.0f, 1.0f);
+            GL.Vertex2(1.0f, -1.0f);
             GL.End();
         }
     }

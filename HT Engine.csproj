@@ -44,7 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Game.cs" />
+    <Compile Include="GameCore.cs" />
+    <Compile Include="Core\IScene.cs" />
     <Compile Include="GameObjects\GOinterface.cs" />
     <Compile Include="GameObjects\RectangleObject.cs" />
     <Compile Include="GameObjects\TriangleObject.cs" />
