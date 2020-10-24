@@ -47,6 +47,7 @@
     <Compile Include="Game.cs" />
     <Compile Include="GameObjects\GOinterface.cs" />
     <Compile Include="GameObjects\RectangleObject.cs" />
+    <Compile Include="GameObjects\TriangleObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

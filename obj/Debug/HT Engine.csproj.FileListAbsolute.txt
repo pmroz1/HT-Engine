@@ -8,3 +8,13 @@ D:\Development\HT Engine\obj\Debug\HT Engine.csproj.CoreCompileInputs.cache
 D:\Development\HT Engine\obj\Debug\HT Engine.csproj.CopyComplete
 D:\Development\HT Engine\obj\Debug\HT Engine.dll
 D:\Development\HT Engine\obj\Debug\HT Engine.pdb
+C:\Users\pmroz\Development\HT Team\ht-engine\bin\Debug\HT Engine.dll
+C:\Users\pmroz\Development\HT Team\ht-engine\bin\Debug\HT Engine.pdb
+C:\Users\pmroz\Development\HT Team\ht-engine\bin\Debug\OpenTK.dll
+C:\Users\pmroz\Development\HT Team\ht-engine\bin\Debug\OpenTK.pdb
+C:\Users\pmroz\Development\HT Team\ht-engine\bin\Debug\OpenTK.xml
+C:\Users\pmroz\Development\HT Team\ht-engine\obj\Debug\HT Engine.csprojAssemblyReference.cache
+C:\Users\pmroz\Development\HT Team\ht-engine\obj\Debug\HT Engine.csproj.CoreCompileInputs.cache
+C:\Users\pmroz\Development\HT Team\ht-engine\obj\Debug\HT Engine.csproj.CopyComplete
+C:\Users\pmroz\Development\HT Team\ht-engine\obj\Debug\HT Engine.dll
+C:\Users\pmroz\Development\HT Team\ht-engine\obj\Debug\HT Engine.pdb
