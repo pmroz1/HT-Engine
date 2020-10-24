@@ -29,8 +29,8 @@ namespace HT_Engine
                 Title = gameTitle
             };
             gameWin.Load += Load;
-            gameWin.UpdateFrame += Update;
             gameWin.RenderFrame += Render;
+            gameWin.UpdateFrame += Update;
         }
 
         ///<summary>
@@ -45,6 +45,8 @@ namespace HT_Engine
                 Title = gameTitle
             };
             gameWin.Load += Load;
+            gameWin.RenderFrame += Render;
+            gameWin.UpdateFrame += Update;
         }
 
         public HTWindow(string gameTitle, int width, int height, GraphicsMode gm, GameWindowFlags windowFlags)
@@ -52,6 +54,8 @@ namespace HT_Engine
             scenes = new List<IScene>();
             gameWin = new GameWindow(width, height, gm, gameTitle, windowFlags);
             gameWin.Load += Load;
+            gameWin.RenderFrame += Render;
+            gameWin.UpdateFrame += Update;
         }
 
         public void Load(object sender, EventArgs e)
@@ -82,16 +86,17 @@ namespace HT_Engine
         /// <param name="FPS">Frames Per Second</param>
         public void Run(int UPS, int FPS)
         {
-            //makes game run at 60 fps
             gameWin.Run(UPS, FPS);
         }
 
         public void Render(object sender, EventArgs e)
         {
             ClearBackground();
+            Console.WriteLine("Clearing Background");
             foreach (IGameObject obj in scenes[CurrentScene].GameObjects)
             {
                 obj.RenderObject();
+                Console.WriteLine("RenderingObject");
             }
             //without swapping we will have 2-3fps
             gameWin.SwapBuffers();
@@ -99,10 +104,10 @@ namespace HT_Engine
 
         public void Update(object sender, EventArgs e)
         {
-            foreach (IGameObject obj in scenes[CurrentScene].GameObjects)
-            {
-                obj.UpdateObject();
-            }
+            //foreach (IGameObject obj in scenes[CurrentScene].GameObjects)
+            //{
+            //    obj.UpdateObject();
+            //}
         }
 
         private void ClearBackground()
