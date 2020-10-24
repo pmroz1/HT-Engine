@@ -14,10 +14,11 @@ namespace HT_Engine.GameObjects
         {
             color = clr;
         }
-        //public void Dispose()
-        //{
-        //    throw new NotImplementedException();
-        //}
+
+        public void UpdateObject()
+        {
+            throw new NotImplementedException();
+        }
 
         void IGameObject.RenderObject()
         {

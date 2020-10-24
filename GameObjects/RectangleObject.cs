@@ -15,6 +15,11 @@ namespace HT_Engine.GameObjects
             color = clr;
         }
 
+        public void UpdateObject()
+        {
+            throw new NotImplementedException();
+        }
+
         void IGameObject.RenderObject()
         {
             GL.Begin(PrimitiveType.Quads);

@@ -8,5 +8,6 @@ namespace HT_Engine.GameObjects
     public interface IGameObject
     {
         void RenderObject();
+        void UpdateObject();
     }
 }
