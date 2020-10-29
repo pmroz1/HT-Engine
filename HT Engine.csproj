@@ -44,10 +44,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animations\Animation2D.cs" />
+    <Compile Include="Animations\AnimationSet.cs" />
+    <Compile Include="Animations\IAnimation.cs" />
     <Compile Include="Core\Scene2D.cs" />
+    <Compile Include="GameObjects\Actors\Actor2D.cs" />
+    <Compile Include="GameObjects\Actors\IActor.cs" />
     <Compile Include="HTWindow.cs" />
     <Compile Include="Core\IScene.cs" />
-    <Compile Include="GameObjects\GOinterface.cs" />
+    <Compile Include="GameObjects\IGameObject.cs" />
     <Compile Include="GameObjects\RectangleObject.cs" />
     <Compile Include="GameObjects\TriangleObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
