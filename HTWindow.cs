@@ -3,6 +3,7 @@ using HT_Engine.GameObjects;
 using OpenTK;
 using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
+using OpenTK.Input;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -31,6 +32,7 @@ namespace HT_Engine
             gameWin.Load += Load;
             gameWin.RenderFrame += Render;
             gameWin.UpdateFrame += Update;
+            gameWin.KeyDown += KeyDown;
         }
 
         ///<summary>
@@ -47,6 +49,7 @@ namespace HT_Engine
             gameWin.Load += Load;
             gameWin.RenderFrame += Render;
             gameWin.UpdateFrame += Update;
+            gameWin.KeyDown += KeyDown;
         }
 
         public HTWindow(string gameTitle, int width, int height, GraphicsMode gm, GameWindowFlags windowFlags)
@@ -56,6 +59,7 @@ namespace HT_Engine
             gameWin.Load += Load;
             gameWin.RenderFrame += Render;
             gameWin.UpdateFrame += Update;
+            gameWin.KeyDown += KeyDown;
         }
 
         public void Load(object sender, EventArgs e)
@@ -91,7 +95,8 @@ namespace HT_Engine
 
         public void Render(object sender, EventArgs e)
         {
-            ClearBackground();
+            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
+            //ClearBackground();
             Console.WriteLine("Clearing Background");
             foreach (IGameObject obj in scenes[CurrentScene].GameObjects)
             {
@@ -128,6 +133,34 @@ namespace HT_Engine
         public void AddScene(IScene scene)
         {
             scenes.Add(scene);
+        }
+
+        public void KeyDown(object obj, KeyboardKeyEventArgs args)
+        {
+            float speed = 0.1f;
+            if (args.Key == Key.W)
+            {
+                GL.ClearColor(Color4.Gray);
+                scenes[CurrentScene].GameObjects[0].Move(new Vector2(0, speed));
+            }
+
+            if (args.Key == Key.S)
+            {
+                GL.ClearColor(Color4.YellowGreen);
+                scenes[CurrentScene].GameObjects[0].Move(new Vector2(0, y: -speed));
+            }
+
+            if (args.Key == Key.A)
+            {
+                GL.ClearColor(Color4.DeepPink);
+                scenes[CurrentScene].GameObjects[0].Move(new Vector2(-speed, 0));
+            }
+
+            if (args.Key == Key.D)
+            {
+                GL.ClearColor(Color4.DarkTurquoise);
+                scenes[CurrentScene].GameObjects[0].Move(new Vector2(speed, 0));
+            }
         }
     }
 }
