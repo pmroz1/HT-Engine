@@ -10,6 +10,5 @@ namespace HT_Engine.GameObjects
     {
         void RenderObject();
         void UpdateObject();
-        void Move(Vector2 vec);
     }
 }

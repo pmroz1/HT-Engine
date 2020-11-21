@@ -1,5 +1,6 @@
 ﻿using HT_Engine.Core;
 using HT_Engine.GameObjects;
+using HT_Engine.GameObjects.Actors;
 using OpenTK;
 using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
@@ -98,7 +99,7 @@ namespace HT_Engine
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
             //ClearBackground();
             Console.WriteLine("Clearing Background");
-            foreach (IGameObject obj in scenes[CurrentScene].GameObjects)
+            foreach (IActor obj in scenes[CurrentScene].GameObjects)
             {
                 obj.RenderObject();
                 Console.WriteLine("RenderingObject");
@@ -140,25 +141,21 @@ namespace HT_Engine
             float speed = 0.1f;
             if (args.Key == Key.W)
             {
-                GL.ClearColor(Color4.Gray);
                 scenes[CurrentScene].GameObjects[0].Move(new Vector2(0, speed));
             }
 
             if (args.Key == Key.S)
             {
-                GL.ClearColor(Color4.YellowGreen);
                 scenes[CurrentScene].GameObjects[0].Move(new Vector2(0, y: -speed));
             }
 
             if (args.Key == Key.A)
             {
-                GL.ClearColor(Color4.DeepPink);
                 scenes[CurrentScene].GameObjects[0].Move(new Vector2(-speed, 0));
             }
 
             if (args.Key == Key.D)
             {
-                GL.ClearColor(Color4.DarkTurquoise);
                 scenes[CurrentScene].GameObjects[0].Move(new Vector2(speed, 0));
             }
         }

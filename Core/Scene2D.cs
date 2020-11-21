@@ -6,22 +6,23 @@ using System.Text;
 using OpenTK.Graphics.OpenGL;
 using HT_Engine.GameObjects;
 using System.Drawing;
+using HT_Engine.GameObjects.Actors;
 
 namespace HT_Engine.Core
 {
     public class Scene2D : IScene
     {
 
-        public List<IGameObject> GameObjects { get; set; }
+        public List<IActor> GameObjects { get; set; }
         //add background colors
         public Scene2D()
         {
-            this.GameObjects = new List<IGameObject>();
+            this.GameObjects = new List<IActor>();
         }
 
         public void RenderScene()
         {
-            foreach (IGameObject obj in GameObjects)
+            foreach (IActor obj in GameObjects)
             {
                 obj.RenderObject();
             }
@@ -31,12 +32,12 @@ namespace HT_Engine.Core
         {
             for (int i = 0; i < GameObjects.Count; i++)
             {
-                IGameObject obj = GameObjects[i];
+                IActor obj = GameObjects[i];
                 obj.UpdateObject();
             }
         }
 
-        public void AddObject(IGameObject obj)
+        public void AddObject(IActor obj)
         {
             GameObjects.Add(obj);
         }

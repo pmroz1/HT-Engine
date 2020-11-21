@@ -48,6 +48,7 @@
     <Compile Include="Animations\AnimationSet.cs" />
     <Compile Include="Animations\IAnimation.cs" />
     <Compile Include="Core\Scene2D.cs" />
+    <Compile Include="Core\Structs\ActorCoords.cs" />
     <Compile Include="Core\Structs\TriangleParams.cs" />
     <Compile Include="GameObjects\Actors\Actor2D.cs" />
     <Compile Include="GameObjects\Actors\IActor.cs" />
