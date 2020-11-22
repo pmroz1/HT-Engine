@@ -47,10 +47,15 @@ namespace HT_Engine.GameObjects.Actors
 
         public void Move(Vector2 vec)
         {
-            foreach (Vector2 x in coords.pts)
+            for (int i = 0; i < coords.pts.Length; ++i)
             {
-                Console.WriteLine(x);
+                coords.pts[i] += vec;
             }
+
+            //foreach (Vector2 x in coords.pts)
+            //{
+            //    x[1] += vec;
+            //}
         }
 
         public void RenderObject()
