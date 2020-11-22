@@ -11,5 +11,8 @@ namespace HT_Engine.GameObjects.Actors
         void RenderObject();
         void UpdateObject();
         void Move(Vector2 vec);
+
+        void LoadActorTexture(string path);
+
     }
 }

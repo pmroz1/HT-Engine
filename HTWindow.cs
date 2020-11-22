@@ -1,6 +1,7 @@
 ﻿using HT_Engine.Core;
 using HT_Engine.GameObjects;
 using HT_Engine.GameObjects.Actors;
+using HT_Engine.Graphics;
 using OpenTK;
 using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
@@ -34,6 +35,8 @@ namespace HT_Engine
             gameWin.RenderFrame += Render;
             gameWin.UpdateFrame += Update;
             gameWin.KeyDown += KeyDown;
+
+            GL.Enable(EnableCap.Texture2D);
         }
 
         ///<summary>
@@ -51,6 +54,8 @@ namespace HT_Engine
             gameWin.RenderFrame += Render;
             gameWin.UpdateFrame += Update;
             gameWin.KeyDown += KeyDown;
+
+            GL.Enable(EnableCap.Texture2D);
         }
 
         public HTWindow(string gameTitle, int width, int height, GraphicsMode gm, GameWindowFlags windowFlags)
@@ -61,6 +66,8 @@ namespace HT_Engine
             gameWin.RenderFrame += Render;
             gameWin.UpdateFrame += Update;
             gameWin.KeyDown += KeyDown;
+
+            GL.Enable(EnableCap.Texture2D);
         }
 
         public void Load(object sender, EventArgs e)

@@ -58,6 +58,7 @@
     <Compile Include="GameObjects\RectangleObject.cs" />
     <Compile Include="GameObjects\TriangleObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Graphics\ContentPipe.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="OpenTK.dll.config" />
