@@ -21,6 +21,8 @@ namespace HT_Engine
         public List<IScene> scenes;
         public int CurrentScene;
 
+        private int playerID = -1;
+
         ///<summary>
         ///Public constructor, generates game window
         /// </summary>
@@ -145,25 +147,42 @@ namespace HT_Engine
 
         public void KeyDown(object obj, KeyboardKeyEventArgs args)
         {
+            if (playerID == -1)
+            {
+                FindPlayerID();
+            }
+
             float speed = 0.1f;
             if (args.Key == Key.W)
             {
-                scenes[CurrentScene].GameObjects[0].Move(new Vector2(0, speed));
+                scenes[CurrentScene].GameObjects[1].Move(new Vector2(0, speed));
             }
 
             if (args.Key == Key.S)
             {
-                scenes[CurrentScene].GameObjects[0].Move(new Vector2(0, y: -speed));
+                scenes[CurrentScene].GameObjects[1].Move(new Vector2(0, y: -speed));
             }
 
             if (args.Key == Key.A)
             {
-                scenes[CurrentScene].GameObjects[0].Move(new Vector2(-speed, 0));
+                scenes[CurrentScene].GameObjects[1].Move(new Vector2(-speed, 0));
             }
 
             if (args.Key == Key.D)
             {
-                scenes[CurrentScene].GameObjects[0].Move(new Vector2(speed, 0));
+                scenes[CurrentScene].GameObjects[1].Move(new Vector2(speed, 0));
+            }
+        }
+
+        private void FindPlayerID()
+        {
+            for (int i = 0; i < scenes[CurrentScene].GameObjects.Count - 1; ++i)
+            {
+                if (scenes[CurrentScene].GameObjects[i].CheckIfIsPlayer() == true)
+                {
+                    playerID = i;
+                    break;
+                }
             }
         }
     }

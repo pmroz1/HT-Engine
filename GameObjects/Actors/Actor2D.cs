@@ -22,6 +22,8 @@ namespace HT_Engine.GameObjects.Actors
 
         public int texture;
 
+        private bool isPlayer = false;
+
         public Actor2D(ActorCoords pos, Color clr)
         {
             coords = pos;
@@ -57,8 +59,14 @@ namespace HT_Engine.GameObjects.Actors
             texture = ContentPipe.LoadTexture(path);
         }
 
+        public void SetAsPlayer(bool status)
+        {
+            isPlayer = status;
+        }
+
         public void Move(Vector2 vec)
         {
+
             for (int i = 0; i < coords.pts.Length; ++i)
             {
                 coords.pts[i] += vec;
@@ -119,6 +127,18 @@ namespace HT_Engine.GameObjects.Actors
         public void UpdateObject()
         {
             throw new NotImplementedException();
+        }
+
+        public bool CheckIfIsPlayer()
+        {
+            if (isPlayer)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

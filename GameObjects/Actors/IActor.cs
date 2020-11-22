@@ -13,6 +13,6 @@ namespace HT_Engine.GameObjects.Actors
         void Move(Vector2 vec);
 
         void LoadActorTexture(string path);
-
+        bool CheckIfIsPlayer();
     }
 }
