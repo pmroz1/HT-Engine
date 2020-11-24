@@ -23,6 +23,7 @@ namespace HT_Engine.GameObjects.Actors
         public int texture;
 
         private bool isPlayer = false;
+        public bool makeTransparent = false;
 
         public Actor2D(ActorCoords pos, Color clr)
         {
@@ -82,31 +83,67 @@ namespace HT_Engine.GameObjects.Actors
         {
             if (texture != -1)
             {
-                GL.BindTexture(TextureTarget.Texture2D, texture);
-                GL.Begin(PrimitiveType.Quads);
-
-                int i = 0;
-                foreach (Vector2 x in coords.pts)
+                if (makeTransparent == true)
                 {
-                    switch (i)
+                    Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                    GL.Enable(EnableCap.Blend);
+                    GL.BlendFunc(sfactor: BlendingFactor.SrcAlpha, dfactor: BlendingFactor.OneMinusSrcAlpha);
+
+                    GL.BindTexture(TextureTarget.Texture2D, texture);
+                    GL.Begin(PrimitiveType.Quads);
+
+                    int i = 0;
+                    foreach (Vector2 x in coords.pts)
                     {
-                        case 0:
-                            GL.TexCoord2(0, 0);
-                            break;
-                        case 1:
-                            GL.TexCoord2(1, 0);
-                            break;
-                        case 2:
-                            GL.TexCoord2(1, 1);
-                            break;
-                        case 3:
-                            GL.TexCoord2(0, 1);
-                            break;
+                        switch (i)
+                        {
+                            case 0:
+                                GL.TexCoord2(0, 0);
+                                break;
+                            case 1:
+                                GL.TexCoord2(1, 0);
+                                break;
+                            case 2:
+                                GL.TexCoord2(1, 1);
+                                break;
+                            case 3:
+                                GL.TexCoord2(0, 1);
+                                break;
+                        }
+                        GL.Vertex2(x);
+                        ++i;
                     }
-                    GL.Vertex2(x);
-                    ++i;
+                    GL.End();
+                    GL.Disable(EnableCap.Blend);
                 }
-                GL.End();
+                else
+                {
+                    GL.BindTexture(TextureTarget.Texture2D, texture);
+                    GL.Begin(PrimitiveType.Quads);
+
+                    int i = 0;
+                    foreach (Vector2 x in coords.pts)
+                    {
+                        switch (i)
+                        {
+                            case 0:
+                                GL.TexCoord2(0, 0);
+                                break;
+                            case 1:
+                                GL.TexCoord2(1, 0);
+                                break;
+                            case 2:
+                                GL.TexCoord2(1, 1);
+                                break;
+                            case 3:
+                                GL.TexCoord2(0, 1);
+                                break;
+                        }
+                        GL.Vertex2(x);
+                        ++i;
+                    }
+                    GL.End();
+                }
             }
             else
             {

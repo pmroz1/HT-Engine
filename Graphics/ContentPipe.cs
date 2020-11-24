@@ -19,6 +19,10 @@ namespace HT_Engine.Graphics
             }
 
             int id = GL.GenTexture();
+
+            //GL.Enable(EnableCap.Blend);
+            //GL.BlendFunc(sfactor: BlendingFactor.SrcAlpha, dfactor: BlendingFactor.OneMinusSrcAlpha);
+
             GL.BindTexture(TextureTarget.Texture2D, id);
 
             Bitmap bmp = new Bitmap("Assets/" + path);
@@ -26,8 +30,10 @@ namespace HT_Engine.Graphics
             BitmapData data = bmp.LockBits(
                 new Rectangle(0, 0, bmp.Width, bmp.Height),
                 ImageLockMode.ReadOnly,
-                System.Drawing.Imaging.PixelFormat.Format32bppArgb
+                System.Drawing.Imaging.PixelFormat.Format32bppRgb
             );
+
+            //GL.PixelStore(PixelStoreParameter.UnpackRowLength, data.Width * 4); // 4x for 32bpp
 
             GL.TexImage2D(
                 TextureTarget.Texture2D, 0,
