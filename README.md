@@ -48,7 +48,7 @@ To start using engine just, add another project to solution.
 
 ## Meta
 
-Author – [@PiotrMróz](https://twitter.com/PiotrMrz6) 
+Author – [@PiotrMróz](https://twitter.com/ReformedMrozu) 
 
 Distributed under the MIT license. See ``LICENSE`` for more information.
 
