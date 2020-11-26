@@ -119,10 +119,10 @@ namespace HT_Engine
 
         public void Update(object sender, EventArgs e)
         {
-            //foreach (IGameObject obj in scenes[CurrentScene].GameObjects)
-            //{
-            //    obj.UpdateObject();
-            //}
+            foreach (IActor obj in scenes[CurrentScene].GameObjects)
+            {
+                obj.UpdateObject();
+            }
         }
 
         private void ClearBackground()
@@ -143,6 +143,11 @@ namespace HT_Engine
         public void AddScene(IScene scene)
         {
             scenes.Add(scene);
+        }
+
+        public void RemoveScene(IScene scene)
+        {
+            scenes.Remove(scene);
         }
 
         public void KeyDown(object obj, KeyboardKeyEventArgs args)

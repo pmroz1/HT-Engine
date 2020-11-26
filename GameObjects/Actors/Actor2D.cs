@@ -20,6 +20,8 @@ namespace HT_Engine.GameObjects.Actors
         public ActorCoords coords;
         public Color color;
 
+        public Func<int> UpdateHandler { get; set; }
+
         public int texture;
 
         private bool isPlayer = false;
@@ -71,6 +73,7 @@ namespace HT_Engine.GameObjects.Actors
             for (int i = 0; i < coords.pts.Length; ++i)
             {
                 coords.pts[i] += vec;
+                Console.Write(i + ":" + coords.pts[i]);
             }
 
             //foreach (Vector2 x in coords.pts)
@@ -163,7 +166,7 @@ namespace HT_Engine.GameObjects.Actors
 
         public void UpdateObject()
         {
-            throw new NotImplementedException();
+            UpdateHandler?.Invoke();
         }
 
         public bool CheckIfIsPlayer()

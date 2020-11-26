@@ -41,5 +41,10 @@ namespace HT_Engine.Core
         {
             GameObjects.Add(obj);
         }
+
+        public void RemoveObj(IActor obj)
+        {
+            GameObjects.Remove(obj);
+        }
     }
 }
