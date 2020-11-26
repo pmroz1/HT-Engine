@@ -64,6 +64,7 @@ namespace HT_Engine
         {
             scenes = new List<IScene>();
             gameWin = new GameWindow(width, height, gm, gameTitle, windowFlags);
+
             gameWin.Load += Load;
             gameWin.RenderFrame += Render;
             gameWin.UpdateFrame += Update;
