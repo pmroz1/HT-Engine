@@ -145,6 +145,11 @@ namespace HT_Engine
             scenes.Add(scene);
         }
 
+        public void RemoveScene(IScene scene)
+        {
+            scenes.Remove(scene);
+        }
+
         public void KeyDown(object obj, KeyboardKeyEventArgs args)
         {
             if (playerID == -1)
