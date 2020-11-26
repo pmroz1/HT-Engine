@@ -16,6 +16,7 @@ namespace HT_Engine.GameObjects.Actors
     {
         public string actorName;
         public Vector2 actorPosition;
+
         public AnimationSet animations;
         public ActorCoords coords;
         public Color color;
@@ -69,7 +70,6 @@ namespace HT_Engine.GameObjects.Actors
 
         public void Move(Vector2 vec)
         {
-
             for (int i = 0; i < coords.pts.Length; ++i)
             {
                 coords.pts[i] += vec;
