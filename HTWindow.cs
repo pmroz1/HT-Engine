@@ -119,10 +119,10 @@ namespace HT_Engine
 
         public void Update(object sender, EventArgs e)
         {
-            //foreach (IGameObject obj in scenes[CurrentScene].GameObjects)
-            //{
-            //    obj.UpdateObject();
-            //}
+            foreach (IActor obj in scenes[CurrentScene].GameObjects)
+            {
+                obj.UpdateObject();
+            }
         }
 
         private void ClearBackground()
