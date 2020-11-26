@@ -1,4 +1,5 @@
 ﻿using HT_Engine.GameObjects;
+using HT_Engine.GameObjects.Actors;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace HT_Engine.Core
         ///foreach (Action func in functions)
         ///    func();
 
-        List<IGameObject> GameObjects { get; set; }
+        List<IActor> GameObjects { get; set; }
 
         void RenderScene();
         void UpdateScene();

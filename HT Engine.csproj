@@ -44,13 +44,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animations\Animation2D.cs" />
+    <Compile Include="Animations\AnimationSet.cs" />
+    <Compile Include="Animations\IAnimation.cs" />
     <Compile Include="Core\Scene2D.cs" />
+    <Compile Include="Core\Structs\ActorCoords.cs" />
+    <Compile Include="Core\Structs\TriangleParams.cs" />
+    <Compile Include="GameObjects\Actors\Actor2D.cs" />
+    <Compile Include="GameObjects\Actors\IActor.cs" />
     <Compile Include="HTWindow.cs" />
     <Compile Include="Core\IScene.cs" />
-    <Compile Include="GameObjects\GOinterface.cs" />
+    <Compile Include="GameObjects\IGameObject.cs" />
     <Compile Include="GameObjects\RectangleObject.cs" />
     <Compile Include="GameObjects\TriangleObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Graphics\ContentPipe.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="OpenTK.dll.config" />

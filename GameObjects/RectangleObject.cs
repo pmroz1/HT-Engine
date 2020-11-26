@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using OpenTK.Graphics.OpenGL;
+using OpenTK;
 
 namespace HT_Engine.GameObjects
 {
@@ -13,6 +14,11 @@ namespace HT_Engine.GameObjects
         public RectangleObject(Color clr)
         {
             color = clr;
+        }
+
+        public void Move(Vector2 vec)
+        {
+            throw new NotImplementedException();
         }
 
         public void UpdateObject()
